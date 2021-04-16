@@ -14,12 +14,8 @@ public class Public extends Untold {
     }
     
     public boolean accesFestival(){
-        if (varsta > 18 && vaccinat == true && bilet == true){
-            Systemm.out.println("Bine ai venit, distractie placuta");
-            return true;}
-        System.out.println("Acces nepermis");
-        return false;
-        //Accesul publicului se permite atata timp cat varsta este peeste 18 ani, iar persoana prezinta biletul, impreuna cu adeverinta de vaccinare
+        if (varsta > 18 && vaccinat == true) {return true;}
+        return false;    //acasta este perspecctiva persoanei de tip public, aceasta crezand ca este apta pentru intrare
     }
     
     public boolean accesZonaVIP() {
