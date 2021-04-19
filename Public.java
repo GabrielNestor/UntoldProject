@@ -2,26 +2,26 @@ public class Public extends Untold {
     boolean bilet;
     int tipBilet;
     int puncte;
-    //clasa public prezzinta atribute legate de bilet, dar si un numar de puncte pe baza carora se pot face achizitii in festival
-    public Public(String nume, String prenume, String CNP, int varsta, boolean vaccinat, boolean bilet, int tipBilet){
+    boolean parinte;
+    
+    public Public(String nume, String prenume, String CNP, int varsta,
+                boolean vaccin, boolean bilet, int tipBilet, boolean parinte){
         this.nume = nume;
         this.prenume = prenume;
         this.CNP = CNP;
         this.varsta = varsta;
-        this.vaccinat = vaccinat;
+        this.vaccin = vaccin;
         this.bilet = bilet;
         this.tipBilet = tipBilet;
+        this.parinte = parinte;
     }
     
-    public boolean accesFestival(){
-        if (varsta > 18 && vaccinat == true) {return true;}
-        return false;    //acasta este perspecctiva persoanei de tip public, aceasta crezand ca este apta pentru intrare
+    public class nevaccinat {
+        final boolean vaccin = false;
+        
+        public nevaccinat(String nume, String prenume, String CNP, int varsta,
+                 boolean bilet, int tipBilet, boolean parinte){
+        }
+        //persoanele nevaccinate vor folosi aceasta clasa inner
     }
-    
-    public boolean accesZonaVIP() {
-        if(tipBilet == 2){return true;}
-        return false;
-        //in zona vip este permisa numai atunci cand tipul biletului are valoarea 2
-    }
-    
 }
