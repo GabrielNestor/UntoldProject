@@ -27,8 +27,8 @@ public class intrareFestival extends Organizare {
          * -stadion, daca acesta are peste 1000 faima;
          */
     }
-    public booleanTestCovid(){
-        
+    public boolean testCovid(nevaccinat n){
+        if (nevaccinat == false) {return false;}
     }
     
 }
