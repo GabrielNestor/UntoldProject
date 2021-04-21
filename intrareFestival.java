@@ -7,8 +7,10 @@ public class intrareFestival extends Organizare {
         this.varsta = varsta;
     }
     
-    public boolean permiteAccesFestival(Public p) {
-        if(p.vaccin == true && p.bilet == true) {
+    public boolean permiteAccesFestival(Public p) throws persoanaInfectata{
+        if (p.vaccin != true) {throw new persoanaInfectata();}
+        
+        if(p.bilet == true) {
             if(p.varsta < 18 && p.parinte == false)
             return false;}
         return true;
