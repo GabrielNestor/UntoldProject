@@ -1,36 +1,37 @@
-public class intrareFestival extends Organizare {
+public class Intrare extends Organizare {
     
-    public intrareFestival(String nume, String prenume, String CNP, int varsta){
-        this.nume = nume;
-        this.prenume = prenume;
-        this.CNP = CNP;
+    public Intrare(String numeComplet, int varsta){
+        this.numeComplet = numeComplet;
         this.varsta = varsta;
     }
     
-    public boolean permiteAccesFestival(Public p) throws persoanaInfectata{
-        if (p.vaccin != true) {throw new persoanaInfectata();}
-        
+    public boolean permiteAccesFestival(Fan p) throws persoanaInfectata{
+        if(p instanceof Nevaccinat) {
+            Nevaccinat o = (Nevaccinat) p;
+            if(o.covid == true){throw new persoanaInfectata();}
+            //Prima data se va verifica daca instanta este de tip Nevaccinata
+            //Se va verifica valoare aleatoare a lui covid.
+            //Daca va fi pozitiva se va arunca o exceptie.
+            }
         if(p.bilet == true) {
-            if(p.varsta < 18 && p.parinte == false)
-            return false;}
+            if(p.varsta < 18 && p.parinte == false){return false;}
+            }
+        p.bratara = true;
         return true;
-        //Publicul are acces la festival atata timp cat este vaccinat, prezinta biletul si are pest 18 ani.
-        //Daca acesta este minor si intruneste restul conditiilor, se va verifica daca aceste etse insotit de parinti.
-        //In caz contrar, nu i se va permite accesul.
+        //Fanii vaccinati, precum si cei nevaccinati care au avut testul negativ
+        //trebuie sa prezinte biletul si sa aibe peste 18 ani pentru a li se permite accesul.
+        //In cazul in care fanul este minor, acestea trebuie sa se prezinte impreuna cu parintii.
+        //Daca toate conditiile sunt ideplinite, acestia vor primi o bratara de acces.
     }
     
     public String repartizareScena(Artist a){
         if(a.faima > 500 && a.faima < 1000) {return "Scena mare";}
         else if(a.faima < 500) {return "Scena mica";}
         return "Stadion";
-        /* In functie de nivelul faimei, artistul va presta pe scene astfel:
-         *  -scena mica, daca acesta are sub 500 faima;
-         *  -scena mare, daca acesta are intre 500-1000 faima;
-         * -stadion, daca acesta are peste 1000 faima;
-         */
-    }
-    public boolean testCovid(nevaccinat n){
-        if (nevaccinat == false) {return false;}
+        //Artistii vor presa, in functie de nivelul faimei, pe scene diferite astfel:
+        // - faima sub 500 - Scena mica
+        // - faima intre 500 si 1000 - Scena mare
+        // - faima peste 1000 - Stadion
     }
     
 }
