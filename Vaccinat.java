@@ -1,6 +1,6 @@
-import java.util.Random;
 public class Vaccinat extends Fan {
     public final boolean covid = false;
+    //Fanii vaccinati vor fi considerati ca fiind negativi
     
     public Vaccinat(String numeComplet, String CNP, int varsta,
                 boolean vaccin, boolean bilet, int tipBilet, boolean parinte){
