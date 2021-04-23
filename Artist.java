@@ -1,13 +1,11 @@
-public class Artist extends Untold{
-    int faima;
-    String gen;
+ublic class Artist extends Untold{
+    public int faima;
+    public String gen;
+    public static final vaccin = true;
     
-    public Artist(String nume, String prenume, String CNP, int varsta, boolean vaccin,String gen, int faima){
-        this.nume = nume;
-        this.prenume = prenume;
-        this.CNP = CNP;
+    public Artist(String numeComplet, int varsta, String gen, int faima){
+        this.numeComplet = numeComplet;
         this.varsta = varsta;
-        this.vaccin = vaccin;
         this.faima = faima;
         this.gen = gen;
     }
@@ -18,9 +16,12 @@ public class Artist extends Untold{
         if(!(o instanceof Artist)) {return false;}
         
         Artist a = (Artist)o;
-        if(this.gen == a.gen && this.faima == a.faima){
-            return true;}
+        if(this.gen == a.gen && this.faima == a.faima) {return true;}
         return false;
+        //Doi artisti sunt cosiderati egali daca nivelul faimei, precum si genul muzical, sunt aceleasi.
     }
-    //doi artisti sunt considerati egali atunci cand nivelul faimei si genul lor sunt identice.
+        
+    
+
+
 }
