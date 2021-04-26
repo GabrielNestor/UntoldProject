@@ -18,6 +18,7 @@ public class TarabaGoodies extends Organizare{
     public void vinde(Fan f, String goodie){
         f.puncte -=stoc.get(goodie);
         stoc.remove(goodie);
-        
+    //Metoda este folosita pe personalul care lucreaza la taraba pentru a vinde fanilor produse. 
+    //Aceasta scade numarul de puncte de pe bratara fanului in functie de valoarea specificata in HashMap
     }
 }
