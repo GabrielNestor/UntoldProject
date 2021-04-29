@@ -22,7 +22,7 @@ public class TarabaGoodies extends Organizare{
     }
     
     public void vinde(Fan f, String goodie){
-        if(stoc.containsKey(goodie)){
+        if(stoc.containsKey(goodie) & f.puncte>stoc.get(goodie)){
             f.puncte-=stoc.get(goodie);
             stoc.remove(goodie);
         }else{System.out.println("Produsul ales nu este in stoc");}
