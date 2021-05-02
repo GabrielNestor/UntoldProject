@@ -8,7 +8,7 @@ public class Intrare extends Organizare {
         lista = new TreeSet<Fan>((p1,p2)-> p1.numeComplet.compareTo(p2.numeComplet));
     }
     
-    public boolean permiteAccesFestival(Fan p) throws persoanaInfectata{
+    public boolean permiteAcces(Fan p) throws persoanaInfectata{
         if(p instanceof Nevaccinat) {
             Nevaccinat o = (Nevaccinat) p;
             if(o.covid == true){throw new persoanaInfectata();}
