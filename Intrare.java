@@ -1,8 +1,11 @@
+import java.util.*;
 public class Intrare extends Organizare {
+    private TreeSet<Fan> lista;
     
     public Intrare(String numeComplet, int varsta){
         this.numeComplet = numeComplet;
         this.varsta = varsta;
+        lista = new TreeSet<Fan>((p1,p2)-> p1.numeComplet.compareTo(p2.numeComplet));
     }
     
     public boolean permiteAccesFestival(Fan p) throws persoanaInfectata{
@@ -17,11 +20,16 @@ public class Intrare extends Organizare {
             if(p.varsta < 18 && p.parinte == false){return false;}
             }
         p.bratara = true;
+        lista.add(p)
         return true;
         //Fanii vaccinati, precum si cei nevaccinati care au avut testul negativ
         //trebuie sa prezinte biletul si sa aibe peste 18 ani pentru a li se permite accesul.
         //In cazul in care fanul este minor, acestea trebuie sa se prezinte impreuna cu parintii.
         //Daca toate conditiile sunt ideplinite, acestia vor primi o bratara de acces.
+    }
+    
+    public void afisareLista(){
+        lista.forEach(System.out::println);
     }
     
     public String repartizareScena(Artist a){
