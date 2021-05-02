@@ -1,15 +1,14 @@
-public class Vaccinat extends Fan {
+import java.util.*;
+public class Vaccinat extends Fan{
     public final boolean covid = false;
-    //Fanii vaccinati vor fi considerati ca fiind negativi
+    public final boolean vaccin = true;
+    public List<String> rucsac = new ArrayList<>();
     
-    public Vaccinat(String numeComplet, String CNP, int varsta,
-                boolean vaccin, boolean bilet, int tipBilet, boolean parinte){
+    public Vaccinat(String numeComplet, String CNP, int varsta, boolean bilet, boolean parinte){
         this.numeComplet = numeComplet;
         this.CNP = CNP;
         this.varsta = varsta;
-        this.vaccin = vaccin;
         this.bilet = bilet;
-        this.tipBilet = tipBilet;
         this.parinte = parinte;
     }
 }
