@@ -5,7 +5,7 @@ public class Intrare extends Organizare {
     public Intrare(String numeComplet, int varsta){
         this.numeComplet = numeComplet;
         this.varsta = varsta;
-        lista = new TreeSet<Fan>((p1,p2)-> p1.numeComplet.compareTo(p2.numeComplet));
+        lista = new TreeSet<Fan>((p1,p2)-> p1.numeComplet.compareToIgnoreCase(p2.numeComplet));
     }
     
     public boolean permiteAcces(Fan p) throws persoanaInfectata{
