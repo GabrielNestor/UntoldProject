@@ -18,7 +18,7 @@ public class Intrare extends Organizare {
             }
         if(p.bilet == true) {
             if(p.varsta < 18 && p.parinte == false){return false;}
-            }
+            }else{return false;}
         p.bratara = true;
         lista.add(p)
         return true;
