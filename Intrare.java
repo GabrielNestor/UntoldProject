@@ -6,6 +6,7 @@ public class Intrare extends Organizare {
         this.numeComplet = numeComplet;
         this.varsta = varsta;
         lista = new TreeSet<Fan>((p1,p2)-> p1.numeComplet.compareToIgnoreCase(p2.numeComplet));
+        //crearea unei liste de tip TreeSet, folosind un comparator, in functie de ordinea lexicografica.
     }
     
     public boolean permiteAcces(Fan p) throws persoanaInfectata{
@@ -18,14 +19,14 @@ public class Intrare extends Organizare {
             }
         if(p.bilet == true) {
             if(p.varsta < 18 && p.parinte == false){return false;}
-            }else{return false;}
+        }else{return false;}
         p.bratara = true;
         lista.add(p)
         return true;
         //Fanii vaccinati, precum si cei nevaccinati care au avut testul negativ
         //trebuie sa prezinte biletul si sa aibe peste 18 ani pentru a li se permite accesul.
         //In cazul in care fanul este minor, acestea trebuie sa se prezinte impreuna cu parintii.
-        //Daca toate conditiile sunt ideplinite, acestia vor primi o bratara de acces.
+        //Daca toate conditiile sunt ideplinite, acestia vor primi o bratara de acces si vor fi trecuti pe o lista.
     }
     
     public void afisareLista(){
