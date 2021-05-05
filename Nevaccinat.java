@@ -11,5 +11,6 @@ public class Nevaccinat extends Fan{
         this.varsta = varsta;
         this.bilet = bilet;
         this.parinte = parinte;
+        this.impachetat();
     }
 }
